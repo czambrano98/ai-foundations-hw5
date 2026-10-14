@@ -1,2 +1,4 @@
-PENDING: the public GitHub repo URL will be pasted here once the repo is pushed.
-Expected format: https://github.com/<your-username>/<repo-name>
+https://github.com/czambrano98/ai-foundations-hw5
+
+Clone with:
+  git clone https://github.com/czambrano98/ai-foundations-hw5.git
