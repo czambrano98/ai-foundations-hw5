@@ -1,0 +1,69 @@
+{
+  "run_summary": {
+    "shop_date": "2026-08-31",
+    "model": "gpt-6-luna",
+    "starting_checking_balance": 3400.00,
+    "ending_checking_balance": 160.00,
+    "total_cash_out": 3240.00,
+    "all_resolved": true,
+    "payments_ledger": [
+      { "kind": "invoice", "ref_id": 501, "amount": 840.00, "approved_by": "Carine (owner)" },
+      { "kind": "rent", "ref_id": 1, "amount": 2400.00, "approved_by": "Carine (owner)" }
+    ]
+  },
+  "tickets": [
+    {
+      "id": 101,
+      "type": "customer_order",
+      "subject": "Bulldog tee",
+      "requester": "Tauhid Zaman",
+      "final_status": "resolved",
+      "run_id": "443cf078a741",
+      "outcome": "Size-S Bulldog tee (CC-TEE-WHITE) was out of stock and the reprint was blocked by open invoice #501. The team prepared the $840 invoice payment; after human approval it was paid, clearing the invoice so Bulldog Print Co's 5-day reprint can ship.",
+      "agent_contributions": {
+        "boss": "Read the ticket and delegated in parallel to Inventory, Accounting, and Customer Service.",
+        "inventory": "Confirmed size-S stock = 0, checked the vendor (Bulldog Print Co can_ship = false while #501 is open), drafted a vendor order, and delegated to Accounting to clear the blocking invoice.",
+        "accounting": "Listed open invoices and checked cash, identified invoice #501 ($840) as the blocker, and updated the ticket. Did not pay on its own; left it for human approval.",
+        "customer_service": "Drafted a customer reply (not sent) and delegated to Inventory to confirm stock and reprint timing."
+      },
+      "human_approvals": [
+        { "kind": "invoice", "ref_id": 501, "amount": 840.00, "approved_by": "Carine (owner)", "cash_before": 3400.00, "cash_after": 2560.00 }
+      ]
+    },
+    {
+      "id": 102,
+      "type": "rent_notice",
+      "subject": "Rent due",
+      "requester": "Elm City Properties",
+      "final_status": "resolved",
+      "run_id": "d2eba77011d5",
+      "outcome": "Rent of $2,400 on lease #1 (Chapel Street shop) was due 2026-09-02. The team prepared the payment; after human approval the rent was paid and next_due advanced to 2026-10-02.",
+      "agent_contributions": {
+        "boss": "Read the ticket and delegated to Facilities.",
+        "facilities": "Confirmed lease #1 (rent $2,400, next due 2026-09-02) and delegated the payment to Accounting.",
+        "accounting": "Checked cash and updated the ticket, preparing the rent payment. Did not pay on its own; left it for human approval."
+      },
+      "human_approvals": [
+        { "kind": "rent", "ref_id": 1, "amount": 2400.00, "approved_by": "Carine (owner)", "cash_before": 2560.00, "cash_after": 160.00 }
+      ]
+    },
+    {
+      "id": 103,
+      "type": "price_override",
+      "subject": "Bulk hoodie discount",
+      "requester": "Yale AI Club",
+      "final_status": "resolved",
+      "run_id": "dd0bb0fbff54",
+      "outcome": "Yale AI Club requested 20 size-M navy hoodies (CC-HOOD-NAVY) at a bulk discount; only 8 in stock (short 12). The team computed margin from cost $22 / list $58, proposed a discount that stays above cost, and drafted a customer reply. After human approval of the discount, the ticket resolved with no cash movement.",
+      "agent_contributions": {
+        "boss": "Read the ticket and delegated to Customer Service.",
+        "customer_service": "Owned the discount decision, delegated to Inventory and Accounting, drafted a customer reply (not sent), and updated the ticket.",
+        "inventory": "Confirmed size-M stock = 8 against the requested 20 (short 12).",
+        "accounting": "Checked pricing (cost $22 / list $58) to bound the discount above cost, and updated the ticket."
+      },
+      "human_approvals": [
+        { "kind": "discount", "ticket_id": 103, "amount": 0.00, "approved_by": "Carine (owner)", "cash_before": 160.00, "cash_after": 160.00 }
+      ]
+    }
+  ]
+}

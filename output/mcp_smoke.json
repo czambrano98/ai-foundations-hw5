@@ -1,0 +1,67 @@
+{
+  "server": "campus-customs",
+  "database": "data/campus_customs_new.db",
+  "tools_registered": [
+    "get_inventory",
+    "get_lease",
+    "get_pricing"
+  ],
+  "tests": [
+    {
+      "ticket": 101,
+      "prompt": "Do we have the Classic Bulldog Tee (CC-TEE-WHITE) in size S in stock to fill Tauhid's order?",
+      "tool": "get_inventory",
+      "arguments": {
+        "sku": "CC-TEE-WHITE",
+        "size": "S"
+      },
+      "tool_output": {
+        "found": true,
+        "items": [
+          {
+            "sku": "CC-TEE-WHITE",
+            "name": "Classic Bulldog Tee",
+            "size": "S",
+            "qty": 0,
+            "location": "Aisle B"
+          }
+        ]
+      }
+    },
+    {
+      "ticket": 102,
+      "prompt": "The rent notice points at lease 1 \u2014 how much is the rent and when is it next due?",
+      "tool": "get_lease",
+      "arguments": {
+        "lease_id": 1
+      },
+      "tool_output": {
+        "found": true,
+        "lease": {
+          "id": 1,
+          "space_name": "Chapel Street shop",
+          "landlord": "Elm City Properties",
+          "monthly_rent": 2400.0,
+          "next_due": "2026-09-02",
+          "notes": null
+        }
+      }
+    },
+    {
+      "ticket": 103,
+      "prompt": "What's the unit cost and list price for the navy hoodie (CC-HOOD-NAVY) so we can size the Yale AI Club bulk discount?",
+      "tool": "get_pricing",
+      "arguments": {
+        "sku": "CC-HOOD-NAVY"
+      },
+      "tool_output": {
+        "found": true,
+        "pricing": {
+          "sku": "CC-HOOD-NAVY",
+          "unit_cost": 22.0,
+          "list_price": 58.0
+        }
+      }
+    }
+  ]
+}

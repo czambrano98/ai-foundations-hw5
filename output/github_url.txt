@@ -1,0 +1,2 @@
+PENDING: the public GitHub repo URL will be pasted here once the repo is pushed.
+Expected format: https://github.com/<your-username>/<repo-name>

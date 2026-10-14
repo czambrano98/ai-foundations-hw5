@@ -1,0 +1,28 @@
+# Python virtual environment (recreate with: python -m venv .venv && pip install -r requirements.txt)
+.venv/
+__pycache__/
+*.pyc
+
+# Node / frontend build (recreate with: cd frontend && npm install)
+node_modules/
+frontend/dist/
+dist/
+
+# Secrets: never commit the real environment. Set PORTKEY_API_KEY in your shell
+# instead (see .env.example for the variable names).
+.env
+.env.*
+!.env.example
+
+# Local clutter graders do not need
+PREVIOUS/
+data.zip
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# NOTE: data/*.db is intentionally NOT ignored. Both the pristine
+# (campus_customs.db) and working (campus_customs_new.db) databases are committed
+# so graders can run everything immediately.

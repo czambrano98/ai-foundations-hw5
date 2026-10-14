@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Campus Customs Resolved Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#00366b; --navy-deep:#002a54; --ink:#17293d; --muted:#5c6b7d;
+    --paper:#f5f8fc; --panel:#fff; --line:#d7e0ed;
+    --done:#2e6b4f; --done-soft:#e3efe9;
+    --serif:'Fraunces','Palatino Linotype',Palatino,Georgia,serif;
+    --sans:'Inter',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:15px; line-height:1.55}
+  header{background:var(--panel); border-bottom:1px solid var(--line); padding:20px 32px}
+  .brand{display:flex; align-items:center; gap:12px}
+  .mark{width:34px; height:34px; border-radius:50%; background:var(--navy); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-weight:600; font-size:.85rem}
+  h1{margin:0; font-family:var(--serif); font-size:22px; color:var(--navy-deep); font-weight:600}
+  h1 .accent{color:var(--navy); font-style:italic}
+  .sub{color:var(--muted); font-size:13px; margin:6px 0 0}
+  .wrap{max-width:1040px; margin:0 auto; padding:26px 24px 70px}
+  .summary{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px 20px; margin:0 0 26px;
+    display:flex; flex-wrap:wrap; gap:8px 28px; align-items:center}
+  .summary b{font-variant-numeric:tabular-nums}
+  .chip{font-size:12px; font-weight:700; padding:3px 10px; border-radius:20px; background:var(--done-soft); color:var(--done)}
+  .ticket{margin:0 0 34px}
+  .ticket h2{font-family:var(--serif); font-size:20px; color:var(--navy-deep); margin:0 0 4px; display:flex; align-items:center; gap:10px}
+  .cap{color:var(--ink); font-size:14px; margin:0 0 12px; max-width:860px}
+  .cap .why{color:var(--muted)}
+  figure{margin:0}
+  img{width:100%; height:auto; display:block; border:1px solid var(--line); border-radius:12px;
+    box-shadow:0 1px 2px rgba(23,41,61,.05), 0 10px 28px rgba(23,41,61,.07)}
+  .note{color:var(--muted); font-size:12.5px; margin-top:8px}
+  footer{color:var(--muted); font-size:12.5px; border-top:1px solid var(--line); padding-top:14px; margin-top:10px}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="mark">CC</span>
+    <div>
+      <h1>Campus <span class="accent">Customs</span> Resolved Board</h1>
+      <p class="sub">A full run of the agent team, one screenshot of the React board per resolved ticket. Shop date 2026-08-31.</p>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="summary">
+    <span><b>Starting cash</b> $3,400.00</span>
+    <span><b>Ending cash</b> $160.00</span>
+    <span><b>Cash out</b> $3,240.00 (invoice $840 + rent $2,400)</span>
+    <span class="chip">3 of 3 resolved</span>
+  </div>
+
+  <section class="ticket">
+    <h2>#101 · Bulldog tee <span class="chip">Resolved</span></h2>
+    <p class="cap">Boss delegated to Inventory, Accounting, and Customer Service. The size-S tee was out of stock and
+      the reprint was blocked by open invoice #501. After approval, the $840 invoice was paid.
+      <span class="why">Cash $3,400.00 → $2,560.00.</span></p>
+    <figure><img src="resolved_101.png" alt="Dashboard showing ticket 101 resolved with agent activity and the $840 invoice payment approved." /></figure>
+  </section>
+
+  <section class="ticket">
+    <h2>#102 · Rent due <span class="chip">Resolved</span></h2>
+    <p class="cap">Boss delegated to Facilities, which confirmed lease #1 and handed the payment to Accounting.
+      After approval, $2,400 rent was paid and the next due date advanced to 2026-10-02.
+      <span class="why">Cash $2,560.00 → $160.00.</span></p>
+    <figure><img src="resolved_102.png" alt="Dashboard showing ticket 102 resolved with the $2,400 rent payment approved." /></figure>
+  </section>
+
+  <section class="ticket">
+    <h2>#103 · Bulk hoodie discount <span class="chip">Resolved</span></h2>
+    <p class="cap">Boss delegated to Customer Service, which pulled in Inventory (8 of 20 in stock) and Accounting
+      (cost $22 / list $58). A discount above cost was proposed and a customer reply drafted. After approval, the
+      discount was granted with no cash movement. <span class="why">Cash stays $160.00.</span></p>
+    <figure><img src="resolved_103.png" alt="Dashboard showing ticket 103 resolved with the bulk discount approved and no cash moved." /></figure>
+  </section>
+
+  <footer>
+    Double-click this file to open it in a browser; it needs no server. The screenshots are the live React board
+    (agent feed, tinted teddy-bear agents, one-line tool chips, the approval pop-up, and the cash tile). Ending cash
+    $160.00 matches <code>cash_accounts</code> in the working database. Every payment was approved by a human and
+    cash never went negative.
+  </footer>
+</div>
+</body>
+</html>
